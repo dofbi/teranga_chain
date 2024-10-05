@@ -1,0 +1,17 @@
+{
+    "name": "Truffle Development Environment",
+    "dockerFile": "Dockerfile",
+    "customizations": {
+        "vscode": {
+            "extensions": [
+                "trufflesuite-corda.truffle-vscode",     // Extension Truffle pour VS Code
+                "esbenp.prettier-vscode",                // Prettier pour formater le code
+                "dbaeumer.vscode-eslint"                 // ESLint pour la validation du code
+            ]
+        }
+    },
+    "forwardPorts": [8545],                     // Forwarder le port pour Ganache
+    "postCreateCommand": "npm install",         // Commande exécutée après la création du conteneur
+    "remoteUser": "node"                        // Utilisateur par défaut dans le conteneur
+  }
+  
