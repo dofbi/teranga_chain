@@ -1,0 +1,35 @@
+{
+  "name": "teranga_chain",
+  "version": "1.0.0",
+  "description": "Teranga chain is a revolutionary blockchain-based platform designed to transform commercial transactions in Senegal and beyond. Our goal is to connect farmers directly with consumers, ensuring transparency, security, and efficiency in the agricultural supply chain.",
+  "main": "index.js",
+  "directories": {
+    "doc": "docs",
+    "test": "test"
+  },
+  "scripts": {
+    "compile": "truffle compile",
+    "migrate": "truffle migrate",
+    "migrate:reset": "truffle migrate --reset",
+    "test": "truffle test",
+    "ganache": "ganache-cli -p 8545"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dofbi/teranga_chain.git"
+  },
+  "keywords": [
+    "remix",
+    "solidity",
+    "ethereum"
+  ],
+  "author": "dofbi",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/dofbi/teranga_chain/issues"
+  },
+  "homepage": "https://github.com/dofbi/teranga_chain#readme",
+  "dependencies": {
+    "truffle": "^5.11.5"
+  }
+}
