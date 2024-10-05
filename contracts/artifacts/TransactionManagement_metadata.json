@@ -1,0 +1,315 @@
+{
+	"compiler": {
+		"version": "0.8.26+commit.8a97fa7a"
+	},
+	"language": "Solidity",
+	"output": {
+		"abi": [
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": true,
+						"internalType": "uint256",
+						"name": "transactionId",
+						"type": "uint256"
+					},
+					{
+						"indexed": false,
+						"internalType": "address",
+						"name": "seller",
+						"type": "address"
+					},
+					{
+						"indexed": false,
+						"internalType": "uint256",
+						"name": "amount",
+						"type": "uint256"
+					}
+				],
+				"name": "FundsReleased",
+				"type": "event"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": true,
+						"internalType": "uint256",
+						"name": "transactionId",
+						"type": "uint256"
+					},
+					{
+						"indexed": false,
+						"internalType": "address",
+						"name": "buyer",
+						"type": "address"
+					},
+					{
+						"indexed": false,
+						"internalType": "address",
+						"name": "seller",
+						"type": "address"
+					},
+					{
+						"indexed": false,
+						"internalType": "uint256",
+						"name": "amount",
+						"type": "uint256"
+					}
+				],
+				"name": "TransactionCreated",
+				"type": "event"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": true,
+						"internalType": "uint256",
+						"name": "transactionId",
+						"type": "uint256"
+					},
+					{
+						"indexed": false,
+						"internalType": "string",
+						"name": "newStatus",
+						"type": "string"
+					}
+				],
+				"name": "TransactionStatusUpdated",
+				"type": "event"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "_seller",
+						"type": "address"
+					},
+					{
+						"internalType": "uint256",
+						"name": "_productId",
+						"type": "uint256"
+					}
+				],
+				"name": "createTransaction",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "payable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "_transactionId",
+						"type": "uint256"
+					}
+				],
+				"name": "getTransaction",
+				"outputs": [
+					{
+						"internalType": "address",
+						"name": "buyer",
+						"type": "address"
+					},
+					{
+						"internalType": "address",
+						"name": "seller",
+						"type": "address"
+					},
+					{
+						"internalType": "uint256",
+						"name": "amount",
+						"type": "uint256"
+					},
+					{
+						"internalType": "string",
+						"name": "status",
+						"type": "string"
+					},
+					{
+						"internalType": "uint256",
+						"name": "productId",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "_transactionId",
+						"type": "uint256"
+					}
+				],
+				"name": "releaseFunds",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "transactionCount",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"name": "transactions",
+				"outputs": [
+					{
+						"internalType": "address",
+						"name": "buyer",
+						"type": "address"
+					},
+					{
+						"internalType": "address",
+						"name": "seller",
+						"type": "address"
+					},
+					{
+						"internalType": "uint256",
+						"name": "amount",
+						"type": "uint256"
+					},
+					{
+						"internalType": "string",
+						"name": "status",
+						"type": "string"
+					},
+					{
+						"internalType": "uint256",
+						"name": "productId",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "_transactionId",
+						"type": "uint256"
+					},
+					{
+						"internalType": "string",
+						"name": "_newStatus",
+						"type": "string"
+					}
+				],
+				"name": "updateTransactionStatus",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			}
+		],
+		"devdoc": {
+			"kind": "dev",
+			"methods": {
+				"createTransaction(address,uint256)": {
+					"params": {
+						"_productId": "The ID of the product being sold",
+						"_seller": "The address of the seller (farmer)"
+					},
+					"returns": {
+						"_0": "The ID of the newly created transaction"
+					}
+				},
+				"getTransaction(uint256)": {
+					"params": {
+						"_transactionId": "The ID of the transaction to retrieve"
+					},
+					"returns": {
+						"amount": "The transaction amount",
+						"buyer": "The address of the buyer",
+						"productId": "The ID of the product involved in the transaction",
+						"seller": "The address of the seller",
+						"status": "The current status of the transaction"
+					}
+				},
+				"releaseFunds(uint256)": {
+					"params": {
+						"_transactionId": "The ID of the transaction"
+					}
+				},
+				"updateTransactionStatus(uint256,string)": {
+					"params": {
+						"_newStatus": "The new status of the transaction",
+						"_transactionId": "The ID of the transaction to update"
+					}
+				}
+			},
+			"title": "Transaction Management Contract for Teranga Shen",
+			"version": 1
+		},
+		"userdoc": {
+			"kind": "user",
+			"methods": {
+				"createTransaction(address,uint256)": {
+					"notice": "Create a new transaction"
+				},
+				"getTransaction(uint256)": {
+					"notice": "Get transaction details"
+				},
+				"releaseFunds(uint256)": {
+					"notice": "Release funds to the seller"
+				},
+				"updateTransactionStatus(uint256,string)": {
+					"notice": "Update the status of a transaction"
+				}
+			},
+			"notice": "This contract manages transactions between farmers and consumers",
+			"version": 1
+		}
+	},
+	"settings": {
+		"compilationTarget": {
+			"contracts/TransactionManagement.sol": "TransactionManagement"
+		},
+		"evmVersion": "cancun",
+		"libraries": {},
+		"metadata": {
+			"bytecodeHash": "ipfs"
+		},
+		"optimizer": {
+			"enabled": false,
+			"runs": 200
+		},
+		"remappings": []
+	},
+	"sources": {
+		"contracts/TransactionManagement.sol": {
+			"keccak256": "0x3d39f9e30a41d92ea3e1fa31f77735c8609bc4e2773fd6e3868638b92d10c7da",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://781f717f1cf2db1af6126862f8432f0546c48f95a17806ddab71e41be3eb0cce",
+				"dweb:/ipfs/QmSydMLj8uyRPMfeCbMGUTovGeYzQYCUkots4EGWsrB2x8"
+			]
+		}
+	},
+	"version": 1
+}

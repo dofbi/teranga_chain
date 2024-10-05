@@ -1,0 +1,320 @@
+{
+	"compiler": {
+		"version": "0.8.26+commit.8a97fa7a"
+	},
+	"language": "Solidity",
+	"output": {
+		"abi": [
+			{
+				"inputs": [],
+				"stateMutability": "nonpayable",
+				"type": "constructor"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": true,
+						"internalType": "address",
+						"name": "userAddress",
+						"type": "address"
+					},
+					{
+						"indexed": false,
+						"internalType": "string",
+						"name": "name",
+						"type": "string"
+					},
+					{
+						"indexed": false,
+						"internalType": "string",
+						"name": "role",
+						"type": "string"
+					}
+				],
+				"name": "UserRegistered",
+				"type": "event"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": true,
+						"internalType": "address",
+						"name": "userAddress",
+						"type": "address"
+					},
+					{
+						"indexed": false,
+						"internalType": "string",
+						"name": "name",
+						"type": "string"
+					},
+					{
+						"indexed": false,
+						"internalType": "string",
+						"name": "role",
+						"type": "string"
+					}
+				],
+				"name": "UserUpdated",
+				"type": "event"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "_userAddress",
+						"type": "address"
+					}
+				],
+				"name": "getUser",
+				"outputs": [
+					{
+						"internalType": "string",
+						"name": "name",
+						"type": "string"
+					},
+					{
+						"internalType": "string",
+						"name": "role",
+						"type": "string"
+					},
+					{
+						"internalType": "bool",
+						"name": "isRegistered",
+						"type": "bool"
+					},
+					{
+						"internalType": "string",
+						"name": "additionalInfo",
+						"type": "string"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "_userAddress",
+						"type": "address"
+					}
+				],
+				"name": "getUserRole",
+				"outputs": [
+					{
+						"internalType": "string",
+						"name": "",
+						"type": "string"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "_userAddress",
+						"type": "address"
+					}
+				],
+				"name": "isUserRegistered",
+				"outputs": [
+					{
+						"internalType": "bool",
+						"name": "",
+						"type": "bool"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "owner",
+				"outputs": [
+					{
+						"internalType": "address",
+						"name": "",
+						"type": "address"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "string",
+						"name": "_name",
+						"type": "string"
+					},
+					{
+						"internalType": "string",
+						"name": "_role",
+						"type": "string"
+					},
+					{
+						"internalType": "string",
+						"name": "_additionalInfo",
+						"type": "string"
+					}
+				],
+				"name": "registerUser",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "string",
+						"name": "_name",
+						"type": "string"
+					},
+					{
+						"internalType": "string",
+						"name": "_additionalInfo",
+						"type": "string"
+					}
+				],
+				"name": "updateUserInfo",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "",
+						"type": "address"
+					}
+				],
+				"name": "users",
+				"outputs": [
+					{
+						"internalType": "string",
+						"name": "name",
+						"type": "string"
+					},
+					{
+						"internalType": "string",
+						"name": "role",
+						"type": "string"
+					},
+					{
+						"internalType": "bool",
+						"name": "isRegistered",
+						"type": "bool"
+					},
+					{
+						"internalType": "string",
+						"name": "additionalInfo",
+						"type": "string"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			}
+		],
+		"devdoc": {
+			"kind": "dev",
+			"methods": {
+				"getUser(address)": {
+					"params": {
+						"_userAddress": "The address of the user to retrieve"
+					},
+					"returns": {
+						"additionalInfo": "Additional information about the user",
+						"isRegistered": "Whether the user is registered",
+						"name": "The name of the user",
+						"role": "The role of the user"
+					}
+				},
+				"getUserRole(address)": {
+					"params": {
+						"_userAddress": "The address of the user"
+					},
+					"returns": {
+						"_0": "The role of the user"
+					}
+				},
+				"isUserRegistered(address)": {
+					"params": {
+						"_userAddress": "The address of the user to check"
+					},
+					"returns": {
+						"_0": "Whether the user is registered"
+					}
+				},
+				"registerUser(string,string,string)": {
+					"params": {
+						"_additionalInfo": "Any additional information about the user",
+						"_name": "The name of the user",
+						"_role": "The role of the user (\"farmer\", \"consumer\", or \"transporter\")"
+					}
+				},
+				"updateUserInfo(string,string)": {
+					"params": {
+						"_additionalInfo": "The new additional information about the user",
+						"_name": "The new name of the user"
+					}
+				}
+			},
+			"title": "User Management Contract for Teranga Shen",
+			"version": 1
+		},
+		"userdoc": {
+			"kind": "user",
+			"methods": {
+				"getUser(address)": {
+					"notice": "Get user information"
+				},
+				"getUserRole(address)": {
+					"notice": "Get the role of a user"
+				},
+				"isUserRegistered(address)": {
+					"notice": "Check if a user is registered"
+				},
+				"registerUser(string,string,string)": {
+					"notice": "Register a new user"
+				},
+				"updateUserInfo(string,string)": {
+					"notice": "Update user information"
+				}
+			},
+			"notice": "This contract manages user information and roles",
+			"version": 1
+		}
+	},
+	"settings": {
+		"compilationTarget": {
+			"contracts/UserManagement.sol": "UserManagement"
+		},
+		"evmVersion": "cancun",
+		"libraries": {},
+		"metadata": {
+			"bytecodeHash": "ipfs"
+		},
+		"optimizer": {
+			"enabled": false,
+			"runs": 200
+		},
+		"remappings": []
+	},
+	"sources": {
+		"contracts/UserManagement.sol": {
+			"keccak256": "0x65856cdf1fef9b237498b889fb079cce9e02b82225f609c7f5e93a43cb892cac",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://b34c680504d6d649de84a471a68b73528db9cc964c6388de73bbc86e2785b88d",
+				"dweb:/ipfs/QmXvHGYnuATG4mVawdhaiHcNEmtCF2idciyZsdpuAbtY91"
+			]
+		}
+	},
+	"version": 1
+}

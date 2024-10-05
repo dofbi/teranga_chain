@@ -1,0 +1,316 @@
+{
+	"compiler": {
+		"version": "0.8.26+commit.8a97fa7a"
+	},
+	"language": "Solidity",
+	"output": {
+		"abi": [
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": true,
+						"internalType": "uint256",
+						"name": "productId",
+						"type": "uint256"
+					},
+					{
+						"indexed": false,
+						"internalType": "string",
+						"name": "productName",
+						"type": "string"
+					},
+					{
+						"indexed": false,
+						"internalType": "address",
+						"name": "farmer",
+						"type": "address"
+					}
+				],
+				"name": "ProductRegistered",
+				"type": "event"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": true,
+						"internalType": "uint256",
+						"name": "productId",
+						"type": "uint256"
+					},
+					{
+						"indexed": false,
+						"internalType": "string",
+						"name": "newStatus",
+						"type": "string"
+					}
+				],
+				"name": "StatusUpdated",
+				"type": "event"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "_productId",
+						"type": "uint256"
+					}
+				],
+				"name": "generateQRCode",
+				"outputs": [
+					{
+						"internalType": "string",
+						"name": "",
+						"type": "string"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "_productId",
+						"type": "uint256"
+					}
+				],
+				"name": "getProduct",
+				"outputs": [
+					{
+						"internalType": "string",
+						"name": "origin",
+						"type": "string"
+					},
+					{
+						"internalType": "uint256",
+						"name": "harvestDate",
+						"type": "uint256"
+					},
+					{
+						"internalType": "string",
+						"name": "status",
+						"type": "string"
+					},
+					{
+						"internalType": "address",
+						"name": "farmer",
+						"type": "address"
+					},
+					{
+						"internalType": "string",
+						"name": "productName",
+						"type": "string"
+					},
+					{
+						"internalType": "string",
+						"name": "description",
+						"type": "string"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "productCount",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"name": "products",
+				"outputs": [
+					{
+						"internalType": "string",
+						"name": "origin",
+						"type": "string"
+					},
+					{
+						"internalType": "uint256",
+						"name": "harvestDate",
+						"type": "uint256"
+					},
+					{
+						"internalType": "string",
+						"name": "status",
+						"type": "string"
+					},
+					{
+						"internalType": "address",
+						"name": "farmer",
+						"type": "address"
+					},
+					{
+						"internalType": "string",
+						"name": "productName",
+						"type": "string"
+					},
+					{
+						"internalType": "string",
+						"name": "description",
+						"type": "string"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "string",
+						"name": "_origin",
+						"type": "string"
+					},
+					{
+						"internalType": "uint256",
+						"name": "_harvestDate",
+						"type": "uint256"
+					},
+					{
+						"internalType": "string",
+						"name": "_productName",
+						"type": "string"
+					},
+					{
+						"internalType": "string",
+						"name": "_description",
+						"type": "string"
+					}
+				],
+				"name": "registerProduct",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "_productId",
+						"type": "uint256"
+					},
+					{
+						"internalType": "string",
+						"name": "_newStatus",
+						"type": "string"
+					}
+				],
+				"name": "updateStatus",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			}
+		],
+		"devdoc": {
+			"kind": "dev",
+			"methods": {
+				"generateQRCode(uint256)": {
+					"params": {
+						"_productId": "The ID of the product"
+					},
+					"returns": {
+						"_0": "A string representation of the QR code URL"
+					}
+				},
+				"getProduct(uint256)": {
+					"params": {
+						"_productId": "The ID of the product to retrieve"
+					},
+					"returns": {
+						"description": "A brief description of the product",
+						"farmer": "The address of the farmer who registered the product",
+						"harvestDate": "The harvest date of the product",
+						"origin": "The origin of the product",
+						"productName": "The name of the product",
+						"status": "The current status of the product"
+					}
+				},
+				"registerProduct(string,uint256,string,string)": {
+					"params": {
+						"_description": "A brief description of the product",
+						"_harvestDate": "The harvest date of the product",
+						"_origin": "The origin of the product",
+						"_productName": "The name of the product"
+					},
+					"returns": {
+						"_0": "The ID of the newly registered product"
+					}
+				},
+				"updateStatus(uint256,string)": {
+					"params": {
+						"_newStatus": "The new status of the product",
+						"_productId": "The ID of the product to update"
+					}
+				}
+			},
+			"title": "Product Traceability Contract for Teranga Shen",
+			"version": 1
+		},
+		"userdoc": {
+			"kind": "user",
+			"methods": {
+				"generateQRCode(uint256)": {
+					"notice": "Generate a QR code URL for a product"
+				},
+				"getProduct(uint256)": {
+					"notice": "Get product information"
+				},
+				"registerProduct(string,uint256,string,string)": {
+					"notice": "Register a new product"
+				},
+				"updateStatus(uint256,string)": {
+					"notice": "Update the status of a product"
+				}
+			},
+			"notice": "This contract manages the traceability of agricultural products",
+			"version": 1
+		}
+	},
+	"settings": {
+		"compilationTarget": {
+			"contracts/ProductTraceability.sol": "ProductTraceability"
+		},
+		"evmVersion": "cancun",
+		"libraries": {},
+		"metadata": {
+			"bytecodeHash": "ipfs"
+		},
+		"optimizer": {
+			"enabled": false,
+			"runs": 200
+		},
+		"remappings": []
+	},
+	"sources": {
+		"contracts/ProductTraceability.sol": {
+			"keccak256": "0x23bc589b4df5d13f83054694d1cf8f98f6cd08f4748c89eb28d3ca019e7b8f1b",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://c1a8225f0e676dc9b2961d0875d212b02e868a07362e92380f3456f766c5790d",
+				"dweb:/ipfs/QmeZLE5CfbJmCBDWLBjhoeh7dW8VySN7aGbN4qkam8RrqQ"
+			]
+		}
+	},
+	"version": 1
+}
